@@ -85,18 +85,24 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: _title()),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            _entryField('Email', _emailController),
-            _entryField('Password', _passwordController),
-            _errorMessage(),
-            _submitButton(),
-            _loginOrRegisterButton(),
-          ],
-        ),
-      ),
+      body: Container(
+          height: double.infinity,
+          width: double.infinity,
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              _entryField('Email', _emailController),
+              _entryField('Password', _passwordController),
+              const SizedBox(height: 20),
+              _errorMessage(),
+              const SizedBox(height: 20),
+              _submitButton(),
+              const SizedBox(height: 20),
+              _loginOrRegisterButton(),
+            ],
+          )),
     );
   }
 }
